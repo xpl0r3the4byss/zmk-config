@@ -79,14 +79,14 @@
         raise_layer {
             display-name = "NAV";
             // -----------------------------------------------------------------------------------------
-            // | TOG | EFF |     | UP  |     |     | RST | BOOT| none| none| none| none|
-            // | BRI | HUI | LFT | HOM | RGT |     | none| RGUI| RALT|RCTL | none| none|
+            // | TOG | EFF |     | UP  |     |     | RST | BOOT| BT0 | BT1 | BT2 | BT3 |
+            // | BRI | HUI | LFT | HOM | RGT |     | none| RGUI| RALT|RCTL |BTCLR| none|
             // |MO(3)| BRD |     | DN  |     |     | none| PAUS| none| none| none|TO(0)|
             //                   | none| ENT | GUI | none| none|MO(2)|
             bindings = <
-                &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &none    &kp UP    &none      &none    &sys_reset &bootloader &none    &none     &none &none
-                &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &kp LEFT &kp HOME  &kp RIGHT  &none    &none &kp RGUI        &kp RALT &kp RCTRL &none &none
-                &mo 3            &rgb_ug RGB_BRD  &none    &kp DOWN  &none      &none    &none &kp PAUSE_BREAK &none    &none     &none &to 0
+                &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &none    &kp UP    &none      &none    &sys_reset     &bootloader    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &kp LEFT &kp HOME  &kp RIGHT  &none    &none          &kp RGUI       &kp RALT     &kp RCTRL    &bt BT_CLR   &none
+                &mo 3            &rgb_ug RGB_BRD  &none    &kp DOWN  &none      &none    &none          &kp PAUSE_BREAK &none       &none        &none        &to 0
                                                   &none    &kp RET   &kp LGUI   &none    &none &mo 2
             >;
         };
